@@ -1,0 +1,53 @@
+body {
+    background-color: #e6edf7;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    font-family: 'Playfair Display', serif;
+}
+.container {
+    display: flex;
+    align-items: center;
+    gap: 50px;
+    max-width: 900px;
+}
+.image-block img {
+    width: 400px;
+    border-radius: 40px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+.timer-block {
+    text-align: center;
+    color: #5b87cc;
+}
+#hours-display {
+    font-family: 'Dancing Script', cursive;
+    font-size: 120px;
+    margin: 0;
+}
+.label {
+    font-family: 'Dancing Script', cursive;
+    font-size: 60px;
+    margin-top: -30px;
+}
+.sub-label {
+    letter-spacing: 3px;
+    font-size: 14px;
+    margin-bottom: 30px;
+}
+#accelerate-btn {
+    border: 2px solid #5b87cc;
+    background: transparent;
+    color: #5b87cc;
+    padding: 10px 40px;
+    border-radius: 30px;
+    cursor: pointer;
+    font-size: 18px;
+    transition: 0.3s;
+}
+#accelerate-btn:hover {
+    background: #5b87cc;
+    color: white;
+}
