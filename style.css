@@ -3,40 +3,52 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 100vh;
+    min-height: 100vh;
     margin: 0;
     font-family: 'Playfair Display', serif;
 }
+
 .container {
     display: flex;
     align-items: center;
     gap: 50px;
     max-width: 900px;
+    padding: 20px;
 }
+
 .image-block img {
     width: 400px;
     border-radius: 40px;
     box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+    display: block;
 }
+
 .timer-block {
     text-align: center;
     color: #5b87cc;
 }
+
 #hours-display {
     font-family: 'Dancing Script', cursive;
     font-size: 120px;
     margin: 0;
+    line-height: 1;
 }
+
 .label {
     font-family: 'Dancing Script', cursive;
     font-size: 60px;
-    margin-top: -30px;
+    margin-top: -10px;
+    margin-bottom: 10px;
 }
+
 .sub-label {
     letter-spacing: 3px;
     font-size: 14px;
     margin-bottom: 30px;
+    text-transform: uppercase;
 }
+
 #accelerate-btn {
     border: 2px solid #5b87cc;
     background: transparent;
@@ -46,26 +58,38 @@ body {
     cursor: pointer;
     font-size: 18px;
     transition: 0.3s;
+    font-family: inherit;
 }
-/* Этот блок сработает только на экранах меньше 768 пикселей (телефоны и планшеты) */
-@media (max-width: 768px) {
-    .container {
-        flex-direction: column; /* Ставит картинку и текст друг под другом */
-        text-align: center;
-        gap: 20px;
-    }
 
-    .main-image {
-        width: 80%; /* Картинка не будет вылезать за края */
-        max-width: 300px;
-        height: auto;
-    }
-
-    #timer {
-        font-size: 2rem; /* Немного уменьшаем шрифт для мобильных */
-    }
-}
 #accelerate-btn:hover {
     background: #5b87cc;
     color: white;
+}
+
+/* МОБИЛЬНАЯ ВЕРСИЯ */
+@media (max-width: 768px) {
+    body {
+        align-items: flex-start; /* Чтобы контент не обрезался сверху */
+        padding-top: 40px;
+    }
+
+    .container {
+        flex-direction: column; /* Элементы в столбик */
+        gap: 30px;
+        text-align: center;
+    }
+
+    .image-block img {
+        width: 100%;
+        max-width: 300px; /* Ограничиваем размер картинки на телефоне */
+        border-radius: 30px;
+    }
+
+    #hours-display {
+        font-size: 80px; /* Уменьшаем гигантские цифры */
+    }
+
+    .label {
+        font-size: 40px;
+    }
 }
