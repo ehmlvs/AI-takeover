@@ -7,29 +7,40 @@ body {
     align-items: center;
     min-height: 100vh;
     margin: 0;
+    overflow-x: hidden;
 }
 
 .container {
     display: flex;
     align-items: center;
+    justify-content: center;
     gap: 40px;
     padding: 20px;
+    width: 100%;
+    max-width: 1000px;
 }
 
 .main-image {
     width: 400px;
     height: auto;
-    flex-shrink: 0; /* Чтобы картинка не сжималась */
+    flex-shrink: 0;
 }
 
 .content {
     text-align: center;
-    min-width: 350px; /* Фиксируем ширину текста, чтобы ничего не ехало */
+    flex-grow: 1;
+    min-width: 320px;
 }
 
 #timer {
-    font-size: 3rem;
+    font-size: clamp(1.5rem, 5vw, 3rem);
     margin: 20px 0;
+    font-weight: bold;
+}
+
+h1 {
+    font-size: clamp(1.2rem, 4vw, 2rem);
+    margin: 0;
 }
 
 button {
@@ -39,23 +50,27 @@ button {
     padding: 15px 30px;
     cursor: pointer;
     font-weight: bold;
+    font-family: inherit;
+    transition: all 0.3s;
 }
 
-/* Настройки для ТЕЛЕФОНОВ */
+button:hover {
+    background: #ff0000;
+    color: #000;
+}
+
+/* Мобильная версия */
 @media (max-width: 768px) {
     .container {
-        flex-direction: column; /* Картинка и текст в столбик */
+        flex-direction: column;
+        text-align: center;
         gap: 20px;
     }
     .main-image {
-        width: 100%; /* Картинка на всю ширину экрана */
-        max-width: 300px;
+        width: 80%;
+        max-width: 250px;
     }
     .content {
         min-width: unset;
-        width: 100%;
-    }
-    #timer {
-        font-size: 2rem;
     }
 }
