@@ -47,6 +47,24 @@ body {
     font-size: 18px;
     transition: 0.3s;
 }
+/* Этот блок сработает только на экранах меньше 768 пикселей (телефоны и планшеты) */
+@media (max-width: 768px) {
+    .container {
+        flex-direction: column; /* Ставит картинку и текст друг под другом */
+        text-align: center;
+        gap: 20px;
+    }
+
+    .main-image {
+        width: 80%; /* Картинка не будет вылезать за края */
+        max-width: 300px;
+        height: auto;
+    }
+
+    #timer {
+        font-size: 2rem; /* Немного уменьшаем шрифт для мобильных */
+    }
+}
 #accelerate-btn:hover {
     background: #5b87cc;
     color: white;
