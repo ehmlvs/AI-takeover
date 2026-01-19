@@ -1,76 +1,53 @@
 body {
-    background-color: #000;
-    color: #ff0000;
-    font-family: 'Courier New', Courier, monospace;
+    background-color: #e6edf7;
     display: flex;
     justify-content: center;
     align-items: center;
-    min-height: 100vh;
+    height: 100vh;
     margin: 0;
-    overflow-x: hidden;
+    font-family: 'Playfair Display', serif;
 }
-
 .container {
     display: flex;
     align-items: center;
-    justify-content: center;
-    gap: 40px;
-    padding: 20px;
-    width: 100%;
-    max-width: 1000px;
+    gap: 50px;
+    max-width: 900px;
 }
-
-.main-image {
+.image-block img {
     width: 400px;
-    height: auto;
-    flex-shrink: 0;
+    border-radius: 40px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
 }
-
-.content {
+.timer-block {
     text-align: center;
-    flex-grow: 1;
-    min-width: 320px;
+    color: #5b87cc;
 }
-
-#timer {
-    font-size: clamp(1.5rem, 5vw, 3rem);
-    margin: 20px 0;
-    font-weight: bold;
-}
-
-h1 {
-    font-size: clamp(1.2rem, 4vw, 2rem);
+#hours-display {
+    font-family: 'Dancing Script', cursive;
+    font-size: 120px;
     margin: 0;
 }
-
-button {
+.label {
+    font-family: 'Dancing Script', cursive;
+    font-size: 60px;
+    margin-top: -30px;
+}
+.sub-label {
+    letter-spacing: 3px;
+    font-size: 14px;
+    margin-bottom: 30px;
+}
+#accelerate-btn {
+    border: 2px solid #5b87cc;
     background: transparent;
-    border: 2px solid #ff0000;
-    color: #ff0000;
-    padding: 15px 30px;
+    color: #5b87cc;
+    padding: 10px 40px;
+    border-radius: 30px;
     cursor: pointer;
-    font-weight: bold;
-    font-family: inherit;
-    transition: all 0.3s;
+    font-size: 18px;
+    transition: 0.3s;
 }
-
-button:hover {
-    background: #ff0000;
-    color: #000;
-}
-
-/* Мобильная версия */
-@media (max-width: 768px) {
-    .container {
-        flex-direction: column;
-        text-align: center;
-        gap: 20px;
-    }
-    .main-image {
-        width: 80%;
-        max-width: 250px;
-    }
-    .content {
-        min-width: unset;
-    }
+#accelerate-btn:hover {
+    background: #5b87cc;
+    color: white;
 }
