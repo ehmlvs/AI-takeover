@@ -1,53 +1,61 @@
 body {
-    background-color: #e6edf7;
+    background-color: #000;
+    color: #ff0000;
+    font-family: 'Courier New', Courier, monospace;
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 100vh;
+    min-height: 100vh;
     margin: 0;
-    font-family: 'Playfair Display', serif;
 }
+
 .container {
     display: flex;
     align-items: center;
-    gap: 50px;
-    max-width: 900px;
+    gap: 40px;
+    padding: 20px;
 }
-.image-block img {
+
+.main-image {
     width: 400px;
-    border-radius: 40px;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+    height: auto;
+    flex-shrink: 0; /* Чтобы картинка не сжималась */
 }
-.timer-block {
+
+.content {
     text-align: center;
-    color: #5b87cc;
+    min-width: 350px; /* Фиксируем ширину текста, чтобы ничего не ехало */
 }
-#hours-display {
-    font-family: 'Dancing Script', cursive;
-    font-size: 120px;
-    margin: 0;
+
+#timer {
+    font-size: 3rem;
+    margin: 20px 0;
 }
-.label {
-    font-family: 'Dancing Script', cursive;
-    font-size: 60px;
-    margin-top: -30px;
-}
-.sub-label {
-    letter-spacing: 3px;
-    font-size: 14px;
-    margin-bottom: 30px;
-}
-#accelerate-btn {
-    border: 2px solid #5b87cc;
+
+button {
     background: transparent;
-    color: #5b87cc;
-    padding: 10px 40px;
-    border-radius: 30px;
+    border: 2px solid #ff0000;
+    color: #ff0000;
+    padding: 15px 30px;
     cursor: pointer;
-    font-size: 18px;
-    transition: 0.3s;
+    font-weight: bold;
 }
-#accelerate-btn:hover {
-    background: #5b87cc;
-    color: white;
+
+/* Настройки для ТЕЛЕФОНОВ */
+@media (max-width: 768px) {
+    .container {
+        flex-direction: column; /* Картинка и текст в столбик */
+        gap: 20px;
+    }
+    .main-image {
+        width: 100%; /* Картинка на всю ширину экрана */
+        max-width: 300px;
+    }
+    .content {
+        min-width: unset;
+        width: 100%;
+    }
+    #timer {
+        font-size: 2rem;
+    }
 }
